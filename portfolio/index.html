@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
+  </head>
+  <body>
+    <main>
+
+
+      <section id="projects">
+        <h1>Projects</h1>
+        
+ <!-- Trigger/Open The Modal -->
+ <!-- <button id="myBtn">Open Modal</button> -->
+  <div class="thumbnail-container">
+ <img src="Real Estate Company.png" width="400px" id="project1" class="project-thumbnail"/>
+  <img src="Forum.png" width="400px" id="project2" class="project-thumbnail"/>
+ </div>
+
+
+ <!-- The Modal -->
+ <div id="modal1" class="modal">
+ 
+   <!-- Modal content -->
+   <div class="modal-content">
+    <div class="modal-title">
+    <h1>Real Estate Company Project</h1>
+      <span class="close">&times;</span>
+    </div>
+     <img src="Real Estate Company.png" width="100%"/>
+     <p>
+      This project is loosely based on the Zoopla website - with ability for users to
+      search for and view properties and agents, register an account to save properties,
+      andforagentstouploadproperties. TheprojectusesanExpressAPIconnected
+      to a MongoDB database containing property data, and a MySQL database
+      containing user data, a React frontend, an AWS S3 bucket to store uploaded
+      photos and provide custom URLs for viewing photos, and Mapbox to display
+      maps. The project uses Nginx both to serve static React files and as a reverse
+      proxy in order to connect to the API from the frontend. The project runs
+      inside docker containers and stores JWT tokens as cookies when users log
+      in and certbot to enable HTTPS. Most of the technology used to build this
+      project was chosen for the purposes of learning, however some descisions were
+      made to make use of a certain technology’s unique features. For instance,
+      MongoDB was used for storing property data as it has built in geospatial
+      queries, which were useful when querying the database for a property with a
+      given radius, and Docker was used to ensure the development environment
+      was more consistent with the production environment</p>
+   </div>
+ 
+ </div> 
+
+ <div id="modal2" class="modal">
+ 
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-title">
+    <h1>Forum Project</h1>
+      <span class="close">&times;</span>
+    </div>
+     <img src="Forum.png" width="100%"/>
+     <p>
+      This project is simple forum website where users can view, create and edit
+      posts, reply to posts and message each other. The project uses the PHP Laravel
+      framework with Blade templates, Breeze and Tailwind CSS. It interacts with a
+      MYSQL database using the Eloquent ORM and is served using Nginx.</p>
+   </div>
+
+</div> 
+
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <div id="skills-container">
+          <i class="fab fa-html5"></i>
+          <i class="fab fa-css3-alt"></i>
+          <i class="fab fa-js"></i>
+          <i class="fab fa-react"></i>
+          <i class="fab fa-aws"></i>
+          <i class="fab fa-linux"></i>
+          <i class="fas fa-database"></i>
+          <i class="fab fa-git"></i>
+          <i class="fab fa-docker"></i>
+          <i class="fab fa-python"></i>
+          <i class="fab fa-php"></i>
+          <i class="fab fa-laravel"></i>
+          <i class="fab fa-bootstrap"></i>
+          <i class="fab fa-node"></i>
+        </div>
+      </section>
+    </main>
+
+  </body>
+  <script>
+ // Get the modal
+ var modal1 = document.getElementById("modal1");
+ var modal2 = document.getElementById("modal2");
+
+// Get the button that opens the modal
+var btn1 = document.getElementById("project1");
+var btn2 = document.getElementById("project2");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn1.onclick = function() {
+  modal1.style.display = "block";
+}
+
+btn2.onclick = function() {
+  modal2.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal1.style.display = "none";
+  modal2.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal1 || event.target == modal2) {
+    modal1.style.display = "none";
+    modal2.style.display = "none";
+  }
+} 
+  </script>
+</html>
